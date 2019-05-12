@@ -12,10 +12,11 @@ app.use(bodyParser.json());
 // Cors is used that any client can hit hosted server
 app.use(cors());
 
-// Sending simple data to test server
-app.get('/status', (req, res) => {
+// Posting simple message to this route
+// Registration data is in client/src/services/AuthenticationService.js
+app.post('/register', (req, res) => {
   res.send({
-    message: 'hello world'
+    message: `Hello ${req.body.email}! User is registered!`
   });
 });
 
